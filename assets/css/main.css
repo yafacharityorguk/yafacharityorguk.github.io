@@ -257,6 +257,7 @@
      background: #fff;
      padding: 3rem;
 }
+
  .box .image.fit {
      margin: 0;
      border-radius: 0;
@@ -280,6 +281,7 @@
      position: absolute;
      margin: auto;
      right: 0;
+     border: 1px solid black;
      bottom: 0;
      left: 0;
      width: 50%;
@@ -299,9 +301,14 @@ display: flex;
   padding: 0;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1080px) {
      .box .content {
-         padding: 2rem;
+       padding: 2rem;
+       display: flex;
+       flex-direction: column;
+       display: -webkit-box;
+       -webkit-box-orient: vertical;
+       -webkit-box-direction: normal;
     }
 }
 
@@ -310,20 +317,27 @@ display: flex;
      display: flex;
 }
 
+
+
 .inline-block-child {
   display: inline-block;
 }
 
+
 .left{
-  margin-right: 5rem;
+  margin-right: 10rem;
 }
+
 
 .image-feature-image{
-  width: 30rem;
+  align: center;
+  padding: 2rem;
 }
 
+
+
 .donate-form_heading{
-  margin-right: 25rem;
+  margin-right: 29rem;
 }
 
 .donate-form-tabs-options{
@@ -376,20 +390,6 @@ type="checkbox"], [type="radio"] {
 }
 
 
-input[type="radio" i] {
-    background-color: initial;
-    cursor: default;
-    appearance: auto;
-    box-sizing: border-box;
-    margin: 3px 3px 0px 5px;
-    padding: initial;
-    border: initial;
-}
-
-input[type="number" i] {
-    padding: 1px 2px;
-}
-
 
 .donation-amount-other .donation-amount__label {
   -ms-flex-preferred-size: 55px;
@@ -418,10 +418,6 @@ input[type="number" i] {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-label {
-    cursor: default;
-}
-
 .donation-amount-other .donation-amount__input:not([type="checkbox"]):not([type="radio"]) {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -430,26 +426,6 @@ label {
     border: 1px solid #ccc;
     border-left: 0;
 }
-
-button, input:not([type="checkbox"]):not([type="radio"]), select, textarea {
-    font-family: inherit;
-    border-radius: 0;
-}
-
-button, input {
-    overflow: visible;
-}
-button, input, optgroup, select, textarea {
-    font: inherit;
-    margin: 0;
-}
-
-input[type="number" i] {
-    padding: 1px 2px;
-}
-
-
-
 
 .button.icon, button.icon {
   padding-left: 1.35rem;
@@ -665,6 +641,7 @@ label {
      padding: 6rem 0 4rem 0;
      position: relative;
      margin: 0;
+
 }
  .wrapper > .inner {
      margin: 0 auto;
