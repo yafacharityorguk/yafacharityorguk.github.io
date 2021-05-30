@@ -257,7 +257,6 @@
      background: #fff;
      padding: 3rem;
 }
-
  .box .image.fit {
      margin: 0;
      border-radius: 0;
@@ -281,7 +280,6 @@
      position: absolute;
      margin: auto;
      right: 0;
-     border: 1px solid black;
      bottom: 0;
      left: 0;
      width: 50%;
@@ -301,43 +299,85 @@ display: flex;
   padding: 0;
 }
 
+@media screen and (max-width: 800px){
+  .box .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 1080px) {
      .box .content {
-       padding: 2rem;
-       display: flex;
-       flex-direction: column;
-       display: -webkit-box;
-       -webkit-box-orient: vertical;
-       -webkit-box-direction: normal;
+         padding: 2rem;
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         margin: auto;
     }
 }
 
 .box {
      border-color: rgba(144, 144, 144, 0.25);
-     display: flex;
+     display: grid;
+     grid-gap: 5rem;
 }
-
-
 
 .inline-block-child {
   display: inline-block;
 }
 
-
-.left{
-  margin-right: 10rem;
+@media screen and (max-width: 1090px)
+{
+  .left{
+    margin: auto;
+  }
 }
 
 
 .image-feature-image{
-  align: center;
-  padding: 2rem;
+  width: 60vh;
 }
 
+.donate-form{
+  width: 100vh;
+  margin-left: 2rem;
+}
 
+@media screen and (max-width: 1365px){
+  .donate-form{
+    width: 125vh;
+    margin-left: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .donate-form{
+    margin: 0;
+  }
+}
+
+.donate-form-currency{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.donate-form_header{
+  display: flex;
+  position: relative;
+}
 
 .donate-form_heading{
-  margin-right: 29rem;
+  font-size: 150%;
 }
 
 .donate-form-tabs-options{
@@ -349,6 +389,11 @@ display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
   margin-bottom: 16px;
+}
+
+.tabs-label{
+  font-size: 2.5vh;
+  padding-right: 1rem;
 }
 
 @media only screen and (min-width: 768px)
@@ -390,6 +435,20 @@ type="checkbox"], [type="radio"] {
 }
 
 
+input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+
+input[type="number" i] {
+    padding: 1px 2px;
+}
+
 
 .donation-amount-other .donation-amount__label {
   -ms-flex-preferred-size: 55px;
@@ -418,6 +477,10 @@ type="checkbox"], [type="radio"] {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+label {
+    cursor: default;
+}
+
 .donation-amount-other .donation-amount__input:not([type="checkbox"]):not([type="radio"]) {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -426,6 +489,47 @@ type="checkbox"], [type="radio"] {
     border: 1px solid #ccc;
     border-left: 0;
 }
+
+button, input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    font-family: inherit;
+    border-radius: 0;
+}
+
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    font: inherit;
+    margin: 0;
+}
+
+input[type="number" i] {
+    padding: 1px 2px;
+}
+
+.button, button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    height: 2.85rem;
+    line-height: 2.95rem;
+    padding: 0 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
 
 .button.icon, button.icon {
   padding-left: 1.35rem;
@@ -641,7 +745,6 @@ label {
      padding: 6rem 0 4rem 0;
      position: relative;
      margin: 0;
-
 }
  .wrapper > .inner {
      margin: 0 auto;
