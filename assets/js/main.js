@@ -321,4 +321,35 @@ var settings = {
 
 	});
 
+	
+
 })(jQuery);
+
+function donateFrequency(x) {
+	var radioName = document.getElementsByName(x.name);
+	for (i = 0; i < radioName.length; i++) {
+	  document.getElementById(radioName[i].id.concat("Ammount")).style.display = "none";
+	}
+	document.getElementById(x.id.concat("Ammount")).style.display = "initial";
+}
+
+function otherAmount(){
+	a=document.getElementById('other_amount');
+	a.checked=true;
+}
+
+function otherAmountMonthly(){
+	a=document.getElementById('other_amount_monthly');
+	a.checked=true;
+}
+
+function donateAmount(){
+	
+	var finalAmount = document.getElementsByName('donation_amount');
+	for (i = 0; i < finalAmount.length; i++) {
+		if(finalAmount[i].checked == true)
+		{
+			a = finalAmount[i].value;
+		}
+	  }
+}
