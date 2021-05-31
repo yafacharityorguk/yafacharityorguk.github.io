@@ -355,6 +355,7 @@ function donateAmount(){
 		if(finalAmount[i].checked == true)
 		{
 			a = finalAmount[i].value;
+			break;
 		}
 	  }
 }
