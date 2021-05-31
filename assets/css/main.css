@@ -1621,6 +1621,19 @@ label {
   margin-right: auto;
 }
 
+@media screen and (max-width: 1380px){
+  .upper-footer{
+    width: 190vh;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .upper-footer{
+    width: 180vh;
+  }
+}
+
+
 .primary-partners{
   display: grid;
   display:flex;
@@ -1629,6 +1642,25 @@ label {
   border-bottom: 1px solid #A3A59F;
   padding-bottom: 1.5rem;
 }
+
+@media screen and (max-width: 1380px){
+  .primary-partners{
+    padding-left: 20vh;
+  }
+}
+
+@media screen and (max-width: 740px){
+  .primary-partners{
+    padding-left: 7vh;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .primary-partners{
+    padding-left: 4vh;
+  }
+}
+
 
 .secondary-partners{
   display: grid;
@@ -1646,9 +1678,6 @@ label {
   height: 16.5vh;
 }
 
-
-
-.
  .responsive-calendar {
      position: relative;
      padding-bottom: 75%;
