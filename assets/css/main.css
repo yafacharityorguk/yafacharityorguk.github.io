@@ -1963,8 +1963,12 @@ p #id_donation_amount{
     border-radius: 3px;
     color: #ffa833;
   }
-    
+
   #id_donation_amount input[type="radio"]:checked + span {
     background-color: #ffa833;
     color: white;
+  }
+  label.radio-inline{
+    display: inline;
+    
   }

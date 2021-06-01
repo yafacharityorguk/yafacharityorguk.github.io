@@ -157,8 +157,9 @@
 							<i class="icon fa-apple"></i><br>
 							<i class="icon fa-google"></i>
 							-->
-							<input type="radio" onchange="donateFrequency(this)" name="donation_frequency" id="once" checked="checked"/>One Time
-							<input type="radio" onchange="donateFrequency(this)" name="donation_frequency" id="monthly"/>Monthly
+							<form>
+							<label class="radio-inline"><input type="radio" onchange="donateFrequency(this)" name="donation_frequency" id="once" checked="checked"/>One Time</label>
+							<label class="radio-inline"><input type="radio" onchange="donateFrequency(this)" name="donation_frequency" id="monthly"/>Monthly</label>
 
 							<div id="onceAmmount">
 								
@@ -185,7 +186,7 @@
 							</div>
 
 							<a onclick="donateAmount()" class="button special">CHECK</a>
-							
+						</form>
 						</div>
 					</div>
 				</div>

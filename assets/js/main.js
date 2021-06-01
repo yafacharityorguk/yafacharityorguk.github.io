@@ -331,6 +331,12 @@ function donateFrequency(x) {
 	  document.getElementById(radioName[i].id.concat("Ammount")).style.display = "none";
 	}
 	document.getElementById(x.id.concat("Ammount")).style.display = "initial";
+	document.getElementById('input_monthly').value = "";
+	document.getElementById('input_once').value = "";
+	document.getElementById('other_amount_monthly').value = "";
+	document.getElementById('other_amount').value = "";
+
+	$('input[name=donation_amount]').attr('checked',false);
 }
 
 function otherAmount(){
@@ -344,17 +350,20 @@ function otherAmountMonthly(){
 }
 
 function donateAmount(){
-	if(document.getElementById('input_once').value != ""){
+	if(document.getElementById('input_once').value != "")
 		document.getElementById('other_amount').value = document.getElementById('input_once').value;
-	}
-	if(document.getElementById('input_monthly').value != ""){
-		document.getElementById('other_amount_monthly').value = document.getElementsById('input_monthly').value;
-	}
+
+	if(document.getElementById('input_monthly').value != "")
+		document.getElementById('other_amount_monthly').value = document.getElementById('input_monthly').value;
+	
 	var finalAmount = document.getElementsByName('donation_amount');
 	for (i = 0; i < finalAmount.length; i++) {
-		if(finalAmount[i].checked == true)
-		{
+		if(finalAmount[i].checked == true){
 			a = finalAmount[i].value;
+			if(a!=""){
+				console.log(a);
+				console.log(finalAmount[i])
+			}
 			break;
 		}
 	  }
