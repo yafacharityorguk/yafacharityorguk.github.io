@@ -165,11 +165,11 @@
 								
 								<p id="id_donation_amount">
 									<br>
-									<label><input type="radio" name="donation_amount" value="10"><span>£10</span></label>
-									<label><input type="radio" name="donation_amount" value="20"><span>£20</span></label>
-									<label><input type="radio" name="donation_amount" value="30"><span>£30</span></label>
-									<label><input type="radio" name="donation_amount" value="60"><span>£60</span></label>
-									<label><input type="radio" name="donation_amount" id="other_amount" value=""><span>£<input type="number" onclick="otherAmount()" id="input_once" value="" placeholder="OTHER AMOUNT"></span></label>
+									<label><input type="radio" name="donation_amount" id="once" value="10"><span>£10</span></label>
+									<label><input type="radio" name="donation_amount" id="once" value="20"><span>£20</span></label>
+									<label><input type="radio" name="donation_amount" id="once" value="30"><span>£30</span></label>
+									<label><input type="radio" name="donation_amount" id="once" value="60"><span>£60</span></label>
+									<label><input type="radio" name="donation_amount" id="once" value=""><span>£<input type="number" onclick="otherAmount()" id="input_once" value="" placeholder="OTHER AMOUNT"></span></label>
 								</p>
 							</div>
 
@@ -177,15 +177,20 @@
 								
 								<p id="id_donation_amount">
 									<br>
-									<label><input type="radio" name="donation_amount" value="5"><span>£5 per month</span></label>
-									<label><input type="radio" name="donation_amount" value="10"><span>£10 per month</span></label>
-									<label><input type="radio" name="donation_amount" value="15"><span>£15 per month</span></label>
-									<label><input type="radio" name="donation_amount" value="20"><span>£20 per month</span></label>
-									<label><input type="radio" name="donation_amount" id="other_amount_monthly" value=""><span>£<input type="number" onclick="otherAmountMonthly()" id="input_monthly" value="" placeholder="OTHER AMOUNT"></span></label>
+									<label><input type="radio" name="donation_amount" id="monthly" value="5"><span>£5 per month</span></label>
+									<label><input type="radio" name="donation_amount" id="monthly" value="10"><span>£10 per month</span></label>
+									<label><input type="radio" name="donation_amount" id="monthly" value="15"><span>£15 per month</span></label>
+									<label><input type="radio" name="donation_amount" id="monthly" value="20"><span>£20 per month</span></label>
+									<label><input type="radio" name="donation_amount" id="monthly" value=""><span>£<input type="number" onclick="otherAmountMonthly()" id="input_monthly" value="" placeholder="OTHER AMOUNT"></span></label>
 								</p>
 							</div>
-
-							<a onclick="donateAmount()" class="button special">CHECK</a>
+														
+							<div id="smart-button-container">
+								<div style="text-align: center;">
+								  <div id="paypal-button-container"></div>
+								</div>
+							  </div>
+							<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=GBP" data-sdk-integration-source="button-factory"></script>
 						</form>
 						</div>
 					</div>

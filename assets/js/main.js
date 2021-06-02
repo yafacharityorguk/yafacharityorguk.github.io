@@ -324,37 +324,35 @@ var settings = {
 	
 
 })(jQuery);
-
 function donateFrequency(x) {
 	var radioName = document.getElementsByName(x.name);
 	for (i = 0; i < radioName.length; i++) {
 	  document.getElementById(radioName[i].id.concat("Ammount")).style.display = "none";
 	}
 	document.getElementById(x.id.concat("Ammount")).style.display = "initial";
+
 	document.getElementById('input_monthly').value = "";
 	document.getElementById('input_once').value = "";
-	document.getElementById('other_amount_monthly').value = "";
-	document.getElementById('other_amount').value = "";
+	document.getElementsByName("donation_amount")[4].value = "";
+	document.getElementsByName("donation_amount")[9].value = "";
 
 	$('input[name=donation_amount]').attr('checked',false);
 }
 
 function otherAmount(){
-	a=document.getElementById('other_amount');
-	a.checked=true;
+	document.getElementsByName("donation_amount")[4].checked=true;
 }
 
 function otherAmountMonthly(){
-	a=document.getElementById('other_amount_monthly');
-	a.checked=true;
+	document.getElementsByName("donation_amount")[9].checked=true;
 }
 
 function donateAmount(){
 	if(document.getElementById('input_once').value != "")
-		document.getElementById('other_amount').value = document.getElementById('input_once').value;
+		document.getElementsByName("donation_amount")[4].value = document.getElementById('input_once').value;
 
 	if(document.getElementById('input_monthly').value != "")
-		document.getElementById('other_amount_monthly').value = document.getElementById('input_monthly').value;
+		document.getElementsByName("donation_amount")[9].value = document.getElementById('input_monthly').value;
 	
 	var finalAmount = document.getElementsByName('donation_amount');
 	for (i = 0; i < finalAmount.length; i++) {
@@ -362,9 +360,39 @@ function donateAmount(){
 			a = finalAmount[i].value;
 			if(a!=""){
 				console.log(a);
-				console.log(finalAmount[i])
+				console.log(finalAmount[i].id);
+				return a;
 			}
 			break;
 		}
 	  }
 }
+
+function initPayPalButton() {
+	paypal.Buttons({
+	  style: {
+		shape: 'rect',
+		color: 'gold',
+		layout: 'vertical',
+		label: 'paypal',
+		
+	  },
+
+	  createOrder: function(data, actions) {
+		return actions.order.create({
+		  purchase_units: [{"amount":{"currency_code":"GBP","value":donateAmount()}}]
+		});
+	  },
+
+	  onApprove: function(data, actions) {
+		return actions.order.capture().then(function(details) {
+		  alert('Transaction completed by ' + details.payer.name.given_name + '!');
+		});
+	  },
+
+	  onError: function(err) {
+		console.log(err);
+	  }
+	}).render('#paypal-button-container');
+  }
+  initPayPalButton();

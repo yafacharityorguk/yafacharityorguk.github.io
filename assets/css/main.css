@@ -1941,14 +1941,16 @@
 @media screen and (min-width: 890px) {
 p #id_donation_amount{
     display: grid;
+    flex-wrap: wrap;
     margin-left: -1rem;
     padding: 0;
     table-layout: fixed;
     width: calc(100% + 1rem);
 }
 #id_donation_amount label{
-    display: table-cell;
-    padding: 0 0 0 1rem;
+    margin: 10px 1.8% 1.8%;
+    flex: 0 0 30.8%;
+    text-align: center;
 }
 }
 #id_donation_amount input[type="radio"] {
@@ -1957,6 +1959,7 @@ p #id_donation_amount{
   
   #id_donation_amount span {
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     text-transform: uppercase;
     border: 2px solid #ffa833;
@@ -1970,5 +1973,5 @@ p #id_donation_amount{
   }
   label.radio-inline{
     display: inline;
-    
+    size: 20px;
   }
