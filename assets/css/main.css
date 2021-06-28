@@ -1059,7 +1059,7 @@
     }
     nav ul li a:hover,
     nav ul li a:visited:hover {
-    background: #2581DC;
+    background: #e4e4e4;
     color: #000000;
     }
     nav ul li a:not(:only-child):after,
@@ -1099,6 +1099,12 @@
         display: block;
     }
     
+    nav ul li a:hover,
+    nav ul li a:visited:hover {
+    background: rgb(85, 171, 206);
+    color: #000000;
+    }
+
     nav {
         width: 100%;
         padding: 70px 0 15px;
@@ -1121,6 +1127,7 @@
     
     .nav-dropdown {
         position: static;
+        box-shadow: none;
     }
     }
     @media screen and (min-width: 890px) {
