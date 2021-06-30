@@ -1010,7 +1010,7 @@
 }
 .navigation {
     height: 70px;
-    background: #ffffff00;
+    background: white;
     }
     
     .brand {
@@ -1079,7 +1079,7 @@
     position: absolute;
     display: none;
     z-index: 3;
-    box-shadow: 0 3px 12px rgb(255, 255, 255);
+    box-shadow: 0 3px 12px white;
     background-color: white;
     }
     
@@ -1413,13 +1413,13 @@
      text-align: center;
 }
  #footer a {
-     color: rgba(255, 255, 255, 0.5);
+     color: white;
 }
  #footer a:hover {
-     color: #fff;
+     color: lightgray;
 }
  #footer .copyright {
-     color: #bbb;
+     color: white;
      font-size: 0.9rem;
      margin: 0 0 2rem 0;
      padding: 0;
