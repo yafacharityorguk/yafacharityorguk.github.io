@@ -1047,6 +1047,7 @@
     nav ul li {
     float: left;
     position: relative;
+    padding-left: 0px !important;
     }
     nav ul li a,
     nav ul li a:visited {
