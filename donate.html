@@ -92,61 +92,9 @@
 			<section id="two" class="wrapper style2">
 				<div class="inner">
 					<div class="box">
-						<div class="content"><!--
-							<div class="donate-form">
-								<header class="donate-form_header">
-									<h1 class="donate-form_heading inline-block-child"> Donate now</h1>
-								</header>
-								<div class="donate-form-content">
-									<div class="donate-form-tabs tabs js-tabs">
+						<div class="content">
 
-										<form class="donate-form-tabs-options" action="index.html" method="post">
-											<div class="tabs-options inline-block-child" role="presentation">
-												<label for="one-time" class="tabs-label tabs__item--selected js-tab-item" aria-controls="tab-panel-1" id="tab-1" aria-selected="true" data-label="Single"> <input type="radio" class="tabs-radio-option" name="donation_frequency" value="one-time" autocomplete="off" checked=""> <span class="tabs__label-text">ONE TIME</span> </label>
-											</div>
-											<div class="tabs-options inline-block-child" role="presentation">
-												<label for="monthly" class="tabs-label js-tab-item " aria-controls="tab-panel-2" id="tab-2" data-label="Monthly" aria-selected="false"> <input type="radio" class="tabs-radio-option" name="donation_frequency" id="monthly" value="monthly" autocomplete="off" > <span class="tabs__label-text">Monthly</span> </label>
-											</div>
-										</form>
-
-										<div class="tabs_panel js-tab-panel" id="tab-panel-1" aria-labelledby="tab-1">
-											<form method="GET" id="single-donate-form">
-												<input type="hidden" name="source_page_id" value="439">
-												<div class="donate-form__fields" id="js-donate-form-single" role="radiogroup">
-													<div class="donation-amount">
-														<input type="radio" class="donation-amount__radio" name="amount" value="10" id="one-time-amount-0" autocomplete="off" checked="">
-														<label for="one-time-amount-0" class="donation-amount__label">£10</label>
-													</div>
-													<div class="donation-amount">
-														<input type="radio" class="donation-amount__radio" name="amount" value="20" id="one-time-amount-1" autocomplete="off">
-														<label for="one-time-amount-1" class="donation-amount__label">£20</label>
-													</div>
-													<div class="donation-amount">
-														<input type="radio" class="donation-amount__radio" name="amount" value="30" id="one-time-amount-2" autocomplete="off">
-														<label for="one-time-amount-2" class="donation-amount__label">£30</label>
-													</div>
-													<div class="donation-amount">
-														<input type="radio" class="donation-amount__radio" name="amount" value="40" id="one-time-amount-3" autocomplete="off">
-														<label for="one-time-amount-3" class="donation-amount__label">£40</label>
-													</div>
-
-													<div class="donation-amount--col">
-														<div class="donation-amount donation-amount-other">
-															<input type="radio" name="amount" value="100" class="donation-amount__radio one-time-donation-amount-radio" autocomplete="off" data-other-amount-radio="">
-																<label for="one-time-amount-other" class="donation-amount__label donation-amount-other__label" data-currency="">£</label>
-																<label for="one-time-amount-other-input" class="donation-amount__label--hidden">Other amount</label>
-																<input type="number" class="donation-amount__input one-time-amount-other-input" id="one-time-amount-other-input" placeholder="Other amount" min="2" max="10000000" data-other-amount="">
-														</div>
-													</div>
-												</div>
-												<input type="hidden" class="one-time-amount__total">
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							
+							<!--
 							<i class="icon fa-paypal"></i><br>
 							<i class="icon fa-apple"></i><br>
 							<i class="icon fa-google"></i>
@@ -178,7 +126,8 @@
 									<label><input type="radio" name="donation_amount" id="monthly" value=""><span>£<input type="number" onclick="otherAmountMonthly()" id="input_monthly" value="" placeholder="OTHER AMOUNT"></span></label>
 								</p>
 							</div>
-														
+							
+							<body onload="initPayPalButton();">
 							<div id="smart-button-container">
 								<div style="text-align: center;">
 								  <div id="paypal-button-container"></div>

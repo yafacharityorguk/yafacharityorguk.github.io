@@ -359,8 +359,6 @@ function donateAmount(){
 		if(finalAmount[i].checked == true){
 			a = finalAmount[i].value;
 			if(a!=""){
-				console.log(a);
-				console.log(finalAmount[i].id);
 				return a;
 			}
 			break;
@@ -395,4 +393,3 @@ function initPayPalButton() {
 	  }
 	}).render('#paypal-button-container');
   }
-  initPayPalButton();
