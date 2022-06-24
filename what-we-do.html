@@ -8,6 +8,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+
+		<link rel="stylesheet" href="static/css/normalize.css">
+		<link rel="stylesheet" href="static/themes/classic/galleria.classic.css">
+		<link rel="stylesheet" href="static/css/style.css">
+		<style>
+		#main::after{
+			position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+			content:url(images/gallery/IMG-%281%29.jpg);
+		}</style>
 	</head>
 	<body class="subpage">
 
@@ -111,6 +121,90 @@
                             <h3 id="sports">SPORTS</h3>
                             <p>Swimming every Saturday morning at Hillsborough Leisure Centre. Please contact us for details.</p>
                             <p id="other">Football every Saturday at Goodwin Sports Centre. Please contact us for details.</p>
+							<div id="main" role="main">
+								<div class="icons">
+								  <a id="fullscreen"><img src="static/img/fullscreen.png"
+														  title="Fullscreen" alt="Fullscreen (f)" /></a>
+								</div>
+								<div id="gallery"></div>
+								
+								
+								
+								
+									<script src="static/jquery-3.3.1.min.js"></script>
+									<script src="static/galleria.min.js"></script>
+									<script src="static/themes/classic/galleria.classic.min.js"></script>
+									<script src="static/plugins/history/galleria.history.min.js"></script>
+									<script>
+									var data = [
+								{
+										title: "IMG-(1)",
+										description: "",
+										thumb: "images/gallery/thumbnails/IMG-%281%29.jpg",
+										image: "images/gallery/IMG-%281%29.jpg"
+									  },
+								{
+										title: "IMG-(2)",
+										description: "",
+										thumb: "images/gallery/thumbnails/IMG-%282%29.jpg",
+										image: "images/gallery/IMG-%282%29.jpg"
+									  },
+								{
+										title: "IMG-(3)",
+										description: "",
+										thumb: "images/gallery/thumbnails/IMG-%283%29.jpg",
+										image: "images/gallery/IMG-%283%29.jpg"
+									  },
+								{
+										title: "IMG-(4)",
+										description: "",
+										thumb: "images/gallery/thumbnails/IMG-%284%29.jpg",
+										image: "images/gallery/IMG-%284%29.jpg"
+									  },
+								{
+										title: "IMG-(5)",
+										description: "",
+										thumb: "images/gallery/thumbnails/IMG-%285%29.jpg",
+										image: "images/gallery/IMG-%285%29.jpg"
+									  },
+									]
+								
+									Galleria.ready(function() {
+										/*
+										load thumbnails after gallery setup, and download has started
+										for the main images, but before the loading of map tiles starts
+										in the background. This ensures visible elements are prioritised
+										over non-visible elements
+								
+										The choice to lazy load thumbnails in batches of 50 was not made
+										scientifically. Other numbers may yield better performance.
+										*/
+										this.lazyLoadChunks( 50 );
+								
+										this.attachKeyboard({
+											right: this.next,
+											left: this.prev,
+											/* Toggle fullscreen display on press of 'f' key */
+											0x46: this.toggleFullscreen,
+										});
+								
+										var gallery = this;
+										$('#fullscreen').click(function() {
+										  gallery.toggleFullscreen();
+										});
+								
+										$('.icons').appendTo(this.$('container'));
+									});
+								
+									Galleria.configure({
+										imageCrop: false,
+										transition: "fade",
+										thumbnails: "lazy"
+									});
+									Galleria.run("#gallery", {dataSource: data});
+								
+									</script>
+									  </div>
                         </div>
 					</div>
 				</div>
@@ -119,7 +213,7 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
-					<ul class="icons">
+					<ul class="footer-buttons">
 						<li><a href="https://twitter.com/YAFAcharityOrg" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://facebook.com/YAFAcharityOrg" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>

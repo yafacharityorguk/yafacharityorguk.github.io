@@ -483,19 +483,19 @@
      border-top: 0;
      padding-top: 0;
 }
- ul.icons {
+ ul.footer-buttons {
      cursor: default;
      list-style: none;
      padding-left: 0;
 }
- ul.icons li {
+ ul.footer-buttons li {
      display: inline-block;
      padding: 0 1rem 0 0;
 }
- ul.icons li:last-child {
+ ul.footer-buttons li:last-child {
      padding-right: 0;
 }
- ul.icons li .icon:before {
+ ul.footer-buttons li .icon:before {
      font-size: 2rem;
 }
  ul.alt li {
