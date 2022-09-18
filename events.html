@@ -10,6 +10,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+
+		<link rel="stylesheet" href="static/css/normalize.css">
+		<link rel="stylesheet" href="static/themes/classic/galleria.classic.css">
+		<link rel="stylesheet" href="static/css/style.css">
+		<style>
+		#main::after{
+			position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+			content:url(images/gallery/IMG-%281%29.jpg);
+		}</style>
 	</head>
 	<body class="subpage">
 
@@ -48,10 +58,10 @@
 				  </li>
 				  <li>
 				  <a href="what-we-do#sports">SPORTS</a>
-				  </li>
+				  </li><!--
 				  <li>
 				  <a href="what-we-do#other">FACILITIES AND THE FUTURE SCHOOL</a>
-				  </li>
+				  </li>-->
 				</ul>
 				</li>
 				<li>
@@ -70,6 +80,9 @@
 				</li>
 				<li>
 				<a>EVENTS</a>
+				</li>
+				<li>
+				<a href="aden-steelers">ADEN STEELERS FC</a>
 				</li>
 				<li>
 				<a href="contact">CONTACT</a>
@@ -97,32 +110,117 @@
 		<!-- Two -->
 			<section id="two" class="wrapper style2">
 				<div class="inner">
+					<h3>UPCOMING EVENTS</h3>
 					<header class="align-center">
 						<p>This page will be updated when there are new events</p>
-						<h2>There are no events available</h2>
+						<h2>There are no upcoming events available</h2>
 					</header>
-					<!--
+
+					<br>
+					<h3>PREVIOUS EVENTS</h3>
+					<p>The Queen's Platinum Jubilee 2022 celebration</p>
+					<div id="main" role="main">
+						<div class="icons">
+						  <a id="fullscreen"><img src="static/img/fullscreen.png"
+												  title="Fullscreen" alt="Fullscreen (f)" /></a>
+						</div>
+						<div id="gallery"></div>
+							<script src="static/jquery-3.3.1.min.js"></script>
+							<script src="static/galleria.min.js"></script>
+							<script src="static/themes/classic/galleria.classic.min.js"></script>
+							<script src="static/plugins/history/galleria.history.min.js"></script>
+							<script>
+							var data = [
+						{
+								title: "IMG-(1)",
+								description: "",
+								thumb: "images/gallery/thumbnails/IMG-%281%29.jpg",
+								image: "images/gallery/IMG-%281%29.jpg"
+							  },
+						{
+								title: "IMG-(2)",
+								description: "",
+								thumb: "images/gallery/thumbnails/IMG-%282%29.jpg",
+								image: "images/gallery/IMG-%282%29.jpg"
+							  },
+						{
+								title: "IMG-(3)",
+								description: "",
+								thumb: "images/gallery/thumbnails/IMG-%283%29.jpg",
+								image: "images/gallery/IMG-%283%29.jpg"
+							  },
+						{
+								title: "IMG-(4)",
+								description: "",
+								thumb: "images/gallery/thumbnails/IMG-%284%29.jpg",
+								image: "images/gallery/IMG-%284%29.jpg"
+							  },
+						{
+								title: "IMG-(5)",
+								description: "",
+								thumb: "images/gallery/thumbnails/IMG-%285%29.jpg",
+								image: "images/gallery/IMG-%285%29.jpg"
+							  },
+							]
+						
+							Galleria.ready(function() {
+								/*
+								load thumbnails after gallery setup, and download has started
+								for the main images, but before the loading of map tiles starts
+								in the background. This ensures visible elements are prioritised
+								over non-visible elements
+						
+								The choice to lazy load thumbnails in batches of 50 was not made
+								scientifically. Other numbers may yield better performance.
+								*/
+								this.lazyLoadChunks( 50 );
+						
+								this.attachKeyboard({
+									right: this.next,
+									left: this.prev,
+									/* Toggle fullscreen display on press of 'f' key */
+									0x46: this.toggleFullscreen,
+								});
+						
+								var gallery = this;
+								$('#fullscreen').click(function() {
+								  gallery.toggleFullscreen();
+								});
+						
+								$('.icons').appendTo(this.$('container'));
+							});
+						
+							Galleria.configure({
+								imageCrop: false,
+								transition: "fade",
+								thumbnails: "lazy"
+							});
+							Galleria.run("#gallery", {dataSource: data});
+						
+							</script>
+							  
+					</div>
+					
+					<p>Blackpool trip summer 2021</p>
 					<div class="grid-style">
 
-						<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="images/events/blackpool-summer-2021-en.jpeg" alt="Blackpool Summer 2021 Trip Poster" />
-								</div>
+					<div>
+						<div class="box">
+							<div class="image fit">
+								<img src="images/events/blackpool-summer-2021-en.jpeg" alt="Blackpool Summer 2021 Trip Poster" />
 							</div>
 						</div>
-
-						<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="images/events/blackpool-summer-2021-ar.jpeg" alt="Blackpool Summer 2021 Trip Poster Arabic" />
-								</div>
-							</div>
-						</div>
-
 					</div>
-					-->
 
+					<div>
+						<div class="box">
+							<div class="image fit">
+								<img src="images/events/blackpool-summer-2021-ar.jpeg" alt="Blackpool Summer 2021 Trip Poster Arabic" />
+							</div>
+						</div>
+					</div>
+
+				</div>
 				</div>
 			</section>
 
