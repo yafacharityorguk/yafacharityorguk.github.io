@@ -9,17 +9,21 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		
+		<script type="module">
+			import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
 
-		<link rel="stylesheet" href="static/css/normalize.css">
-		<link rel="stylesheet" href="static/themes/classic/galleria.classic.css">
-		<link rel="stylesheet" href="static/css/style.css">
-		<style>
-		#main::after{
-			position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-			content:url(images/gallery/IMG-%281%29.jpg);
-		}</style>
+			const lightbox = new PhotoSwipeLightbox({
+			gallery: '#my-gallery',
+			children: 'a',
+			pswpModule: () => import('https://unpkg.com/photoswipe'),
+			});
+
+			lightbox.init();
+		</script>
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css">
+
 	</head>
 	<body class="subpage">
 
@@ -143,7 +147,25 @@
 					</div>
 
 					<p>The Queen's Platinum Jubilee 2022 celebration</p>
-					
+					<div class="pswp-gallery" id="my-gallery">
+						<a href="images/gallery/IMG-(1).jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
+						  <img src="images/gallery/thumbnails/IMG-(1).jpg" alt=""/>
+						</a>
+						<a href="images/gallery/IMG-(2).jpg" data-pswp-width="600" data-pswp-height="800" target="_blank">
+						  <img src="images/gallery/thumbnails/IMG-(2).jpg" alt=""/>
+						</a>
+						<a href="images/gallery/IMG-(3).jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
+						  <img src="images/gallery/thumbnails/IMG-(3).jpg" alt=""/>
+						</a>
+						<a href="images/gallery/IMG-(4).jpg" data-pswp-width="776" data-pswp-height="600" target="_blank">
+						  <img src="images/gallery/thumbnails/IMG-(4).jpg" alt=""/>
+						</a>
+						<a href="images/gallery/IMG-(5).jpg" data-pswp-width="600" data-pswp-height="800" target="_blank">
+						  <img src="images/gallery/thumbnails/IMG-(5).jpg" alt=""/>
+						</a>
+					</div>
+					<br>
+
 					<p>Blackpool trip summer 2021</p>
 					<div class="grid-style">
 
